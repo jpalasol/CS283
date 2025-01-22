@@ -133,7 +133,8 @@ int main(int argc, char *argv[]) {
     int  user_str_len;      //length of user supplied string
 
     //TODO:  #1. WHY IS THIS SAFE, aka what if arv[1] does not exist?
-    //      PLACE A COMMENT BLOCK HERE EXPLAINING
+    //      The code checks if there are fewer than 2 arguments before accessing argv[1] and if argv[1] doesn’t exist, the program exits early,
+    //      which prevents errors making it safer.
     if ((argc < 2) || (*argv[1] != '-')) {
         usage(argv[0]);
         exit(1);
@@ -211,4 +212,5 @@ int main(int argc, char *argv[]) {
 //          is a good practice, after all we know from main() that 
 //          the buff variable will have exactly 50 bytes?
 //  
-//          PLACE YOUR ANSWER HERE
+//          It is good practice because itt ensures safety by avoiding buffer overflows and 
+//          makes the function more reusable for buffers of different sizes.
