@@ -149,7 +149,6 @@ int add_student(int fd, int id, char *fname, char *lname, int gpa)
             return ERR_DB_FILE;
         }
 
-
     if (lseek(fd, student_offset, SEEK_SET) < 0){
         printf(ERR_DB_FILE);
         return ERR_DB_FILE;
